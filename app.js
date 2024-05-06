@@ -33,6 +33,10 @@ app.get('/AllProducts', (req, res) => {
 
 app.get('/GetProduct/:id', (req, res) => {
     const id = req.params.id;
+    if (!Number.isInteger(parseInt(id))) {
+        res.status(400).send('Invalid parameter');
+        return;
+    }
     const sql = `SELECT * FROM products WHERE product_id = ?`;
     connection.query(sql, [id], (err, result) => {
         if (err) throw err;
@@ -41,9 +45,8 @@ app.get('/GetProduct/:id', (req, res) => {
         } else {
             res.send(result[0]);
         }
-    }
-    );
-})
+    });
+});
 
 app.post('/AddProduct', (req, res) => {
     const productDetail = req.body;
@@ -57,6 +60,10 @@ app.post('/AddProduct', (req, res) => {
 
 app.patch('/UpdateProduct/:id', (req, res) => {
     const id = req.params.id;
+    if (!Number.isInteger(parseInt(id))) {
+        res.status(400).send('Invalid parameter');
+        return;
+    }
     const productDetail = req.body;
     const sql = `UPDATE products SET product_name = ?, product_image = ?, product_description = ?, product_price = ?, product_quantity = ?, product_status = ?, type_id = ? WHERE product_id = ?`;
     connection.query(sql, [productDetail.product_name, productDetail.product_image, productDetail.product_description, productDetail.product_price, productDetail.product_quantity, productDetail.product_status, productDetail.type_id, id], (err, result) => {
@@ -68,6 +75,10 @@ app.patch('/UpdateProduct/:id', (req, res) => {
 
 app.delete('/DelProduct/:id', (req, res) => {
     const id = req.params.id;
+    if (!Number.isInteger(parseInt(id))) {
+        res.status(400).send('Invalid parameter');
+        return;
+    }
     const sql = `DELETE FROM products WHERE product_id = ?`;
     connection.query(sql, [id], (err, result) => {
         if (err) throw err;
@@ -75,6 +86,8 @@ app.delete('/DelProduct/:id', (req, res) => {
     }
     );
 });
+
+/* Search Product Management */
 
 app.get('/SearchProduct/:name', (req, res) => {
     const name = req.params.name;
@@ -89,7 +102,7 @@ app.get('/SearchProduct/:name', (req, res) => {
 /* Reccomend Product Management */
 
 app.get('/AllRecProducts', (req, res) => {
-    const sql = `SELECT rp.recommend_id, rp.recommendation, rp.product_id, pd.product_name, pd.product_image, pd.product_description, pd.product_price, pd.product_quantity, pd.product_status, pd.type_id, pd.creation_date, pd.update_date
+    const sql = `SELECT rp.recommend_id, rp.recommendation, rp.product_id, pd.product_name, pd.product_image, pd.product_description, pd.product_price, pd.product_quantity, pd.product_status, pd.type_id
     FROM recommend_product rp JOIN products pd ON rp.product_id = pd.product_id ORDER BY pd.product_id`;
     connection.query(sql, (err, result) => {
         if (err) throw err;
@@ -117,6 +130,10 @@ app.post('/AddRecProduct', (req, res) => {
 
 app.delete('/DelRecProduct/:id', (req, res) => {
     const id = req.params.id;
+    if (!Number.isInteger(parseInt(id))) {
+        res.status(400).send('Invalid parameter');
+        return;
+    }
     const sql = `DELETE FROM recommend_product WHERE product_id = ?`;
     connection.query(sql, [id], (err, result) => {
         if (err) throw err;
