@@ -2,18 +2,19 @@ const request = require('supertest');
 const app = require('./app');
 
 describe('Product Management', () => {
-    it('should get all products from database and response with array', async () => {
+    it('should get all products from database and response with array object', async () => {
         const res = await request(app).get('/AllProducts');
         expect(res.statusCode).toEqual(200);
         expect(typeof res.body).toBe('object');
         expect(res.body.length).toEqual(7)
     });
 
-    it('should get a product by id from database and response with product_id 16 ', async () => {
-        const res = await request(app).get('/GetProduct/16');
+    it('should get a product by id from database and response with product_id ', async () => {
+        const id = 5;
+        const res = await request(app).get(`/GetProduct/${id}`);
         expect(res.statusCode).toEqual(200);
         expect(typeof res.body).toBe('object');
-        expect(res.body[0].product_id).toEqual(16);
+        expect(res.body.product_id).toEqual(5);
     });
 
     it('should add a product into database and response 201 code', async () => {
@@ -32,25 +33,29 @@ describe('Product Management', () => {
         expect(res.body.affectedRows).toEqual(1);
     });
 
-    it('should update a product id 14 and response affectedrows 1', async () => {
+    it('should update a product id and response affectedrows 1', async () => {
+        const id = 8;
         const product = {
-            product_name: 'test update',
-            product_image: 'test.jpg',
-            product_description: 'test',
+            product_name: 'product8',
+            product_image: 'product8.jpg',
+            product_description: 'test update',
             product_price: 100,
             product_quantity: 10,
             product_status: "Inactive",
             type_id: 1,
         };
 
-        const res = await request(app).patch('/UpdateProduct/34').send(product);
+        const res = await request(app).patch(`/UpdateProduct/${id}`).send(product);
         expect(res.statusCode).toEqual(200);
         expect(res.body.affectedRows).toEqual(1);
     });
 
-    it('should delete a product id 34 and response code 200', async () => {
-        const res = await request(app).delete('/DelProduct/34');
+    it('should delete a product id and response code 200', async () => {
+        const id = 8;
+        const res = await request(app).delete(`/DelProduct/${id}`);
         expect(res.statusCode).toEqual(200);
+        const res2 = await request(app).get(`/GetProduct/${id}`);
+        expect(res2.statusCode).toEqual(404);
     });
 
 });
@@ -61,8 +66,15 @@ describe('Search Management', () => {
         const res = await request(app).get(`/SearchProduct/${name}`);
         expect(res.statusCode).toEqual(200);
         expect(typeof res.body).toBe('object');
-        expect(res.body[0].product_id).toEqual(17);
-        expect(res.body.length).toEqual(1);
+        expect(res.body[0].product_id).toEqual(3);
+    });
+
+    it('should search a product by name from database and response 3 object', async () => {
+        const name = 'Figurine';
+        const res = await request(app).get(`/SearchProduct/${name}`);
+        expect(res.statusCode).toEqual(200);
+        expect(typeof res.body).toBe('object');
+        expect(res.body.length).toEqual(3);
     });
 });
 
@@ -71,12 +83,12 @@ describe('Recommend Product Management', () => {
         const res = await request(app).get('/AllRecProducts');
         expect(res.statusCode).toEqual(200);
         expect(typeof res.body).toBe('object');
-        expect(res.body.length).toEqual(1);
+        expect(res.body.length).toEqual(2);
     });
 
     it('should add a recommend product into database and response code 201', async () => {
         const product = {
-            product_id: 18,
+            product_id: 2,
             recommendation: 'Highly recommended',
         };
 
@@ -85,8 +97,19 @@ describe('Recommend Product Management', () => {
         expect(res.body.affectedRows).toEqual(1);
     });
 
+    it('should add duplicate a recommend product into database and response code 409', async () => {
+        const product = {
+            product_id: 2,
+            recommendation: 'Highly recommended',
+        };
+
+        const res = await request(app).post('/AddRecProduct').send(product);
+        expect(res.statusCode).toEqual(409);
+        expect(res.text).toEqual('Product already recommended');
+    });
+
     it('should delete a recommend product from database and response 200 code', async () => {
-        const id = 18;
+        const id = 2;
         const res = await request(app).delete(`/DelRecProduct/${id}`);
         expect(res.statusCode).toEqual(200);
     });

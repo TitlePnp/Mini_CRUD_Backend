@@ -36,7 +36,11 @@ app.get('/GetProduct/:id', (req, res) => {
     const sql = `SELECT * FROM products WHERE product_id = ?`;
     connection.query(sql, [id], (err, result) => {
         if (err) throw err;
-        res.send(result);
+        if (result.length === 0) {
+            res.status(404).send('Product not found');
+        } else {
+            res.send(result[0]);
+        }
     }
     );
 })
@@ -86,7 +90,7 @@ app.get('/SearchProduct/:name', (req, res) => {
 
 app.get('/AllRecProducts', (req, res) => {
     const sql = `SELECT rp.recommend_id, rp.recommendation, rp.product_id, pd.product_name, pd.product_image, pd.product_description, pd.product_price, pd.product_quantity, pd.product_status, pd.type_id, pd.creation_date, pd.update_date
-    FROM recommend_product rp JOIN products pd ON rp.product_id = pd.product_id LIMIT 0, 25;`;
+    FROM recommend_product rp JOIN products pd ON rp.product_id = pd.product_id ORDER BY pd.product_id`;
     connection.query(sql, (err, result) => {
         if (err) throw err;
         res.send(result);
@@ -96,13 +100,20 @@ app.get('/AllRecProducts', (req, res) => {
 
 app.post('/AddRecProduct', (req, res) => {
     const productDetail = req.body;
-    const sql = `INSERT INTO recommend_product(product_id, recommendation) VALUES(?, ?)`;
-    connection.query(sql, [productDetail.product_id, productDetail.recommendation], (err, result) => {
+    const checkProductOnRec = `SELECT * FROM recommend_product WHERE product_id = ?`;
+    connection.query(checkProductOnRec, [productDetail.product_id], (err, result) => {
         if (err) throw err;
-        res.status(201).send(result);
-    }
-    );
-})
+        if (result.length > 0) {
+            res.status(409).send('Product already recommended');
+        } else {
+            const sql = `INSERT INTO recommend_product(product_id, recommendation) VALUES(?, ?)`;
+            connection.query(sql, [productDetail.product_id, productDetail.recommendation], (err, result) => {
+                if (err) throw err;
+                res.status(201).send(result);
+            });
+        }
+    });
+});
 
 app.delete('/DelRecProduct/:id', (req, res) => {
     const id = req.params.id;
