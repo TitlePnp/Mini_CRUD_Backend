@@ -10,7 +10,6 @@ app.use(cors());
 app.use(express.json());
 
 /* Products */
-
 app.get('/AllProducts', productsController.getAllProducts);
 
 app.get('/GetProduct/:id', productsController.getProductId);

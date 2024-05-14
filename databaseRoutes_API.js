@@ -3,8 +3,6 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const connection = require('./config/ConnectDB');
-
 const productController = require('./controller/product_db');
 const searchController = require('./controller/search_db')
 const recommendProductController = require('./controller/recommend_product_db')

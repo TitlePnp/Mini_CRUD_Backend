@@ -50,7 +50,7 @@ describe('Add Product', () => {
             product_price: 100,
             product_quantity: 10,
             product_status: "Active",
-            type_id: 1,
+            type_id: 1
         };
 
         const res = await request(app).post('/AddProduct').send(product);
