@@ -1,91 +1,71 @@
 [
   {
     "product_id": 1,
-    "product_name": "LABUBU Boots",
-    "product_image": "/src/assets/labubu_boots.jpg",
-    "product_description": "Labubu Boots",
-    "product_price": 100,
-    "product_quantity": 10,
-    "product_status": "Inactive",
-    "type_id": 1
+    "product_name": "LABUBU Captain Figurine",
+    "product_image": "src/assets/labubu_captain.jpg",
+    "product_description": "LABUBU Captain Size: Height about 20cm Material: PVC/ABS",
+    "product_price": 3190,
+    "product_quantity": 50,
+    "product_status": "Active",
+    "type_id": 2
   },
   {
     "product_id": 2,
-    "product_name": "LABUBU Captain ",
-    "product_image": "/src/assets/labubu_captain.jpg",
-    "product_description": "LABUBU Captain",
-    "product_price": 200,
-    "product_quantity": 20,
-    "product_status": "Active",
-    "type_id": 2
-  },
-  {
-    "product_id": 3,
-    "product_name": "LABUBU Chill",
-    "product_image": "/src/assets/labubu_chill.jpg",
-    "product_description": "LABUBU Chill",
-    "product_price": 300,
-    "product_quantity": 10,
-    "product_status": "Active",
-    "type_id": 1
-  },
-  {
-    "product_id": 4,
-    "product_name": "LABUBU Climber",
-    "product_image": "/src/assets/labubu_climber.jpg",
-    "product_description": "LABUBU Climber",
-    "product_price": 400,
-    "product_quantity": 20,
-    "product_status": "Active",
-    "type_id": 2
-  },
-  {
-    "product_id": 5,
-    "product_name": "LABUBU Fancy",
-    "product_image": "./src/assets/labubu_fancy.jpg",
-    "product_description": "LABUBU Fancy",
-    "product_price": 500,
-    "product_quantity": 20,
-    "product_status": "Active",
-    "type_id": 2
-  },
-  {
-    "product_id": 6,
-    "product_name": "LABUBU Mega",
-    "product_image": "/src/assets/labubu_mega.jpg",
-    "product_description": "LABUBU Mega",
-    "product_price": 600,
+    "product_name": "LABUBU x PRONOUNCE-BE FANCY NOW Vinyl Plush Doll",
+    "product_image": "src/assets/labubu_fancy.jpg",
+    "product_description": "LABUBU Fancy Size:Height about 40cm Age:15+",
+    "product_price": 3190,
     "product_quantity": 50,
     "product_status": "Active",
     "type_id": 1
   },
   {
-    "product_id": 7,
-    "product_name": "LABUBU Monster",
-    "product_image": "/src/assets/labubu_monster.jpg",
-    "product_description": "LABUBU Monster",
-    "product_price": 700,
-    "product_quantity": 20,
-    "product_status": "Active",
-    "type_id": 1
-  },
-  {
-    "product_id": 8,
-    "product_name": "TestDelete",
-    "product_image": "src/assets/labubu_mega.jpg",
-    "product_description": "LABUBU Mega SIZE 793mm MATERIAL PVC",
-    "product_price": 26390,
-    "product_quantity": 20,
+    "product_id": 3,
+    "product_name": "Labubu Climber Figurine",
+    "product_image": "src/assets/labubu_climber.jpg",
+    "product_description": "LABUBU Climber Material: PVC/ABS Size:Height about 15cm",
+    "product_price": 2190,
+    "product_quantity": 100,
     "product_status": "Active",
     "type_id": 2
   },
   {
-    "product_id": 9,
-    "product_name": "TestDelete",
+    "product_id": 4,
+    "product_name": "LABUBU Boots Figurine",
+    "product_image": "src/assets/labubu_boots.jpg",
+    "product_description": "LABUBU Boots Material: PVC/ABS Size: Height about 21cm",
+    "product_price": 3190,
+    "product_quantity": 40,
+    "product_status": "Active",
+    "type_id": 2
+  },
+  {
+    "product_id": 5,
+    "product_name": "THE MONSTERS FALL IN WILD SERIES-Vinyl Plush Doll Pendant",
+    "product_image": "src/assets/labubu_monster.jpg",
+    "product_description": "LABUBU Monster Shell:40%PVC 30%Cotton 30%Polyester Fiber Size: 8cm*7cm*17cm",
+    "product_price": 850,
+    "product_quantity": 40,
+    "product_status": "Active",
+    "type_id": 1
+  },
+  {
+    "product_id": 6,
+    "product_name": "LABUBU Time to Chill-Vinyl Plush Doll",
+    "product_image": "src/assets/labubu_chill.jpg",
+    "product_description": "LABUBU Chill Plush Material: 95% Polyester Fiber,5% Cotton Packing size: About 20x16.4x37.5cm",
+    "product_price": 850,
+    "product_quantity": 40,
+    "product_status": "Active",
+    "type_id": 1
+  },
+  {
+    "product_id": 7,
+    "product_name": "MEGA LABUBU TEC 1000% All About Us",
     "product_image": "src/assets/labubu_mega.jpg",
-    "product_description": "LABUBU Mega SIZE 793mm MATERIAL PVC",
+    "product_description": "LABUBU Mega SIZE 793mm MATERIAL PVC Launch Quantity:Limited to 10pcs",
     "product_price": 26390,
-    "product_quantity": 20,
+    "product_quantity": 10,
     "product_status": "Active",
     "type_id": 2
   }

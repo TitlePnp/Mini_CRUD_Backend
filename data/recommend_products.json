@@ -10,5 +10,65 @@
     "type_id": 1,
     "recommend_id": 1,
     "recommendation": "Captain!!!"
+  },
+  {
+    "product_id": 2,
+    "product_name": "LABUBU Captain ",
+    "product_image": "/src/assets/labubu_captain.jpg",
+    "product_description": "LABUBU Captain",
+    "product_price": 200,
+    "product_quantity": 20,
+    "product_status": "Active",
+    "type_id": 2,
+    "recommend_id": 2,
+    "recommendation": "Highly recommended"
+  },
+  {
+    "product_id": 2,
+    "product_name": "LABUBU Captain ",
+    "product_image": "/src/assets/labubu_captain.jpg",
+    "product_description": "LABUBU Captain",
+    "product_price": 200,
+    "product_quantity": 20,
+    "product_status": "Active",
+    "type_id": 2,
+    "recommend_id": 3,
+    "recommendation": "Highly recommended"
+  },
+  {
+    "product_id": 2,
+    "product_name": "LABUBU Captain ",
+    "product_image": "src/assets/labubu_captain.jpg",
+    "product_description": "LABUBU Captain",
+    "product_price": 200,
+    "product_quantity": 20,
+    "product_status": "Active",
+    "type_id": 2,
+    "recommend_id": 4,
+    "recommendation": "Highly recommended"
+  },
+  {
+    "product_id": 2,
+    "product_name": "LABUBU Captain ",
+    "product_image": "src/assets/labubu_captain.jpg",
+    "product_description": "LABUBU Captain",
+    "product_price": 200,
+    "product_quantity": 20,
+    "product_status": "Active",
+    "type_id": 2,
+    "recommend_id": 5,
+    "recommendation": "Highly recommended"
+  },
+  {
+    "product_id": 2,
+    "product_name": "LABUBU Captain ",
+    "product_image": "src/assets/labubu_captain.jpg",
+    "product_description": "LABUBU Captain",
+    "product_price": 200,
+    "product_quantity": 20,
+    "product_status": "Active",
+    "type_id": 2,
+    "recommend_id": 6,
+    "recommendation": "Highly recommended"
   }
 ]

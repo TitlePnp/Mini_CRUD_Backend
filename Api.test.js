@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('./app');
+const app = require('./mockDataRoutes_API');
 
 describe('Get All Products', () => {
     it('should get all products from database and response with array object', async () => {

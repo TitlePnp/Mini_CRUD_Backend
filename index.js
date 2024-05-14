@@ -1,6 +1,6 @@
 require('dotenv').config();
-const app = require('./databaseRoutes_API');
-// const app = require('./mockDataRoutes_API');
+// const app = require('./databaseRoutes_API');
+const app = require('./mockDataRoutes_API');
 
 var port = process.env.PORT;
 
