@@ -126,7 +126,7 @@ describe('Get All Reccomend Products', () => {
             product_price: 3190,
             product_quantity: 40,
             product_status: "Active",
-            type_id: 2,
+            type_id: 2
         }
         const product2 = {
             recommend_id: 36,
@@ -138,7 +138,7 @@ describe('Get All Reccomend Products', () => {
             product_price: 26390,
             product_quantity: 10,
             product_status: "Active",
-            type_id: 2,
+            type_id: 2
         }
 
         const res = await request(app).get('/AllRecProducts');

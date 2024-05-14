@@ -30,7 +30,8 @@ exports.addProduct = (req, res) => {
     const newProduct = { product_id: maxProductId + 1, ...productDetail };
     products.push(newProduct);
     fs.writeFileSync('./data/products.json', JSON.stringify(products, null, 2));
-    res.status(201).send("Product added successfully")
+    const result = {affectedRows: 1, insertId: maxProductId + 1}
+    res.status(201).send(result);
 }
 
 exports.updateProduct = (req, res) => {
@@ -46,7 +47,8 @@ exports.updateProduct = (req, res) => {
             const updatedProduct = { ...product, ...updateProductDetail };
             products[products.indexOf(product)] = updatedProduct;
             fs.writeFileSync('./data/products.json', JSON.stringify(products, null, 2));
-            res.status(200).send('Product updated successfully');
+            const result = {affectedRows: 1}
+            res.status(200).send(result);
         }
     }
 }
