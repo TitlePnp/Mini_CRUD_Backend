@@ -3,25 +3,13 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+const connection = require('./config/ConnectDB');
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
-});
-
-connection.connect(err => {
-    if (err) throw err;
-    console.log("Connected to the database.");
-});
-
 /* Product Management */
-
 app.get('/AllProducts', (req, res) => {
     const sql = `SELECT * FROM products`;
     connection.query(sql, (err, result) => {

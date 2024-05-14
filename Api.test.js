@@ -11,7 +11,7 @@ describe('Get All Products', () => {
 });
 
 describe('Get Product by ID', () => {
-    it('should get a product by id from database and response with product_id ', async () => {
+    it('should get a product by id from database and response with product object ', async () => {
         const id = 5;
         const res = await request(app).get(`/GetProduct/${id}`);
         expect(res.statusCode).toEqual(200);
@@ -41,7 +41,7 @@ describe('Get Product by ID', () => {
     });
 });
 
-describe('Add Prdocut', () => {
+describe('Add Product', () => {
     it('should add a product into database and response 201 code', async () => {
         const product = {
             product_name: 'test',

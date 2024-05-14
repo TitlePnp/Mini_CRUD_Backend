@@ -1,0 +1,14 @@
+[
+  {
+    "product_id": 1,
+    "product_name": "LABUBU Boots",
+    "product_image": "/src/assets/labubu_boots.jpg",
+    "product_description": "Labubu Boots",
+    "product_price": 100,
+    "product_quantity": 10,
+    "product_status": "Inactive",
+    "type_id": 1,
+    "recommend_id": 1,
+    "recommendation": "Captain!!!"
+  }
+]

@@ -1,0 +1,145 @@
+[
+    {
+        "product_id": 1,
+        "product_name": "LABUBU Boots",
+        "product_image": "/src/assets/labubu_boots.jpg",
+        "product_description": "Labubu Boots",
+        "product_price": 100,
+        "product_quantity": 10,
+        "product_status": "Active",
+        "type_id": 1
+    },
+    {
+        "product_id": 2,
+        "product_name": "LABUBU Captain ",
+        "product_image": "/src/assets/labubu_captain.jpg",
+        "product_description": "LABUBU Captain",
+        "product_price": 200,
+        "product_quantity": 20,
+        "product_status": "Active",
+        "type_id": 2
+    },
+    {
+        "product_id": 3,
+        "product_name": "LABUBU Chill",
+        "product_image": "/src/assets/labubu_chill.jpg",
+        "product_description": "LABUBU Chill",
+        "product_price": 300,
+        "product_quantity": 10,
+        "product_status": "Active",
+        "type_id": 1
+    },
+    {
+        "product_id": 4,
+        "product_name": "LABUBU Climber",
+        "product_image": "/src/assets/labubu_climber.jpg",
+        "product_description": "LABUBU Climber",
+        "product_price": 400,
+        "product_quantity": 20,
+        "product_status": "Active",
+        "type_id": 2
+    },
+    {
+        "product_id": 5,
+        "product_name": "LABUBU Fancy",
+        "product_image": "./src/assets/labubu_fancy.jpg",
+        "product_description": "LABUBU Fancy",
+        "product_price": 500,
+        "product_quantity": 20,
+        "product_status": "Active",
+        "type_id": 2
+    },
+    {
+        "product_id": 6,
+        "product_name": "LABUBU Mega",
+        "product_image": "/src/assets/labubu_mega.jpg",
+        "product_description": "LABUBU Mega",
+        "product_price": 600,
+        "product_quantity": 50,
+        "product_status": "Active",
+        "type_id": 1
+    },
+    {
+        "product_id": 7,
+        "product_name": "LABUBU Monster",
+        "product_image": "/src/assets/labubu_monster.jpg",
+        "product_description": "LABUBU Monster",
+        "product_price": 700,
+        "product_quantity": 20,
+        "product_status": "Active",
+        "type_id": 1
+    }
+]
+
+-------------------------------------------- For Json ------------------------------------
+
+{
+    product_id: 1,
+    product_name: 'LABUBU Boots',
+    product_image: '/src/assets/labubu_boots.jpg',
+    product_description: 'Labubu Boots',
+    product_price: 100,
+    product_quantity: 10,
+    product_status: 'Active',
+    type_id: 1
+},
+{
+    product_id: 2,
+    product_name: 'LABUBU Captain ',
+    product_image: '/src/assets/labubu_captain.jpg',
+    product_description: 'LABUBU Captain',
+    product_price: 200,
+    product_quantity: 20,
+    product_status: 'Active',
+    type_id: 2
+},
+{
+    product_id: 3,
+    product_name: 'LABUBU Chill',
+    product_image: '/src/assets/labubu_chill.jpg',
+    product_description: 'LABUBU Chill',
+    product_price: 300,
+    product_quantity: 10,
+    product_status: 'Active',
+    type_id: 1
+},
+{
+    product_id: 4,
+    product_name: 'LABUBU Climber',
+    product_image: '/src/assets/labubu_climber.jpg',
+    product_description: 'LABUBU Climber',
+    product_price: 400,
+    product_quantity: 20,
+    product_status: 'Active',
+    type_id: 2
+},
+{
+    product_id: 5,
+    product_name: 'LABUBU Fancy',
+    product_image: './src/assets/labubu_fancy.jpg',
+    product_description: 'LABUBU Fancy',
+    product_price: 500,
+    product_quantity: 20,
+    product_status: 'Active',
+    type_id: 2
+},
+{
+    product_id: 6,
+    product_name: 'LABUBU Mega',
+    product_image: '/src/assets/labubu_mega.jpg',
+    product_description: 'LABUBU Mega',
+    product_price: 600,
+    product_quantity: 50,
+    product_status: 'Active',
+    type_id: 1
+},
+{
+    product_id: 7,
+    product_name: 'LABUBU Monster',
+    product_image: '/src/assets/labubu_monster.jpg',
+    product_description: 'LABUBU Monster',
+    product_price: 700,
+    product_quantity: 20,
+    product_status: 'Active',
+    type_id: 1
+}
